@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerPaddle : MonoBehaviour {
-    public float impulse = 10.0f;
+    public float impulse = 15.0f;
 
 
     private Rigidbody2D rb;
