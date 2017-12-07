@@ -8,6 +8,9 @@ public class Ball : MonoBehaviour {
     private Rigidbody2D rb;
     private Transform transformMat;
     private bool stopped = true;
+    private bool matchStarted = false;
+    private Vector2 restartVelocity;
+
 
 	void Start () {
         rb = GetComponent<Rigidbody2D>();
@@ -26,12 +29,18 @@ public class Ball : MonoBehaviour {
 
     private void ResetPosition() {
         transformMat.position = initialPosition;
+        restartVelocity = -rb.velocity;
         rb.velocity = new Vector2(0, 0);
         stopped = true;
     }
 
     private void StartBall() {
-        rb.AddForce(new Vector2(10.0f, 10.0f), ForceMode2D.Force);
+        if(!matchStarted) {
+            rb.AddForce(new Vector2(7.0f, 7.0f), ForceMode2D.Force);
+            matchStarted = true;
+        } else {
+            rb.velocity = restartVelocity;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
@@ -47,6 +56,20 @@ public class Ball : MonoBehaviour {
     private void OnTriggerExit2D(Collider2D collision) {
         if (collision.tag == "GoalCollider") {
             ResetPosition();
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision) {
+        // se abbiamo colpito nella parte alta, allora la pallina andrà verso l'alto, altrimenti verso il basso
+        if(collision.gameObject.tag == "Paddle") {
+            Debug.Log("Collisione");
+            if (gameObject.transform.position.y > collision.transform.position.y) {
+                Debug.Log("Su");
+                rb.velocity = new Vector2(rb.velocity.x, Mathf.Abs(rb.velocity.y));
+            } else {
+                Debug.Log("Giù");
+                rb.velocity = new Vector2(rb.velocity.x, -Mathf.Abs(rb.velocity.y));
+            }
         }
     }
 }
