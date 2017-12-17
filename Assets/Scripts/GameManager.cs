@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour {
     public static GameManager instance;
     private int cpuScore;
     private int playerScore;
+    public Vector2 ballPosition;
 
     public int CpuScore { get { return cpuScore; } set { this.cpuScore = value; } }
     public int PlayerScore { get { return playerScore; } set { this.playerScore = value; } }
@@ -15,22 +16,18 @@ public class GameManager : MonoBehaviour {
     private void Awake() {
         if (instance == null) {
             instance = this;
-        }
-        else if (instance != this) {
+        } else if (instance != this) {
             Destroy(gameObject);
         }
 
         DontDestroyOnLoad(gameObject);
     }
 
-    // Use this for initialization
     void Start () {
         cpuScore = 0;
         playerScore = 0;
 	}
 	
-
-	// Update is called once per frame
 	void Update () {
         // fare metodo per log
 

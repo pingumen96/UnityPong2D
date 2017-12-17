@@ -25,12 +25,15 @@ public class Ball : MonoBehaviour {
             StartBall();
             stopped = false;
         }
+
+        // aggiorno il game manager sulla posizione della palla
+        GameManager.instance.ballPosition = rb.position;
 	}
 
     private void ResetPosition() {
         transformMat.position = initialPosition;
         restartVelocity = -rb.velocity;
-        rb.velocity = new Vector2(0, 0);
+        rb.velocity = Vector2.zero;
         stopped = true;
     }
 
@@ -60,6 +63,7 @@ public class Ball : MonoBehaviour {
     }
 
     private void OnCollisionExit2D(Collision2D collision) {
+        // TODO migliorare sta parte
         // se abbiamo colpito nella parte alta, allora la pallina andrà verso l'alto, altrimenti verso il basso
         if(collision.gameObject.tag == "Paddle") {
             Debug.Log("Collisione");

@@ -113,23 +113,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4451863772563848, guid: ab89cfb1ae0924846bcabaa3e8694818,
     type: 2}
   m_PrefabInternal: {fileID: 567589903}
---- !u!1 &121074301 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1598338661258932, guid: c8217962316f0ee449cfdff3507b16e7,
-    type: 2}
-  m_PrefabInternal: {fileID: 1685561440}
---- !u!114 &121074302
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 121074301}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e29e3e88af58bae4ab61cf6859c79240, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  impulse: 10
 --- !u!4 &121074306 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4481509475288550, guid: c8217962316f0ee449cfdff3507b16e7,
@@ -675,6 +658,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01c56099f0d77384bbb7626bbe5755b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ballPosition: {x: 0, y: 0}
 --- !u!4 &1668320695 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4481509475288550, guid: c8217962316f0ee449cfdff3507b16e7,
@@ -1028,6 +1012,10 @@ Prefab:
         type: 2}
       propertyPath: m_LinearDrag
       value: 1.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 1598338661258932, guid: c8217962316f0ee449cfdff3507b16e7, type: 2}
+      propertyPath: m_TagString
+      value: Paddle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c8217962316f0ee449cfdff3507b16e7, type: 2}

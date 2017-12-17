@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212658193139695310}
   - component: {fileID: 50613540087728396}
   - component: {fileID: 61031752757409216}
+  - component: {fileID: 114639673557706638}
   m_Layer: 0
   m_Name: Paddle
   m_TagString: Paddle
@@ -87,6 +88,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 10}
   m_EdgeRadius: 0
+--- !u!114 &114639673557706638
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1598338661258932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e29e3e88af58bae4ab61cf6859c79240, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  impulse: 15
 --- !u!212 &212658193139695310
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -117,7 +130,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1596895465
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: c341bdea8252d644ab6373235b6b1122, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
