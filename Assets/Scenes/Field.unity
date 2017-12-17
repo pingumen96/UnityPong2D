@@ -287,6 +287,10 @@ Prefab:
       propertyPath: m_Name
       value: CPUScoreText
       objectReference: {fileID: 0}
+    - target: {fileID: 1852011070550458, guid: 50c2f6d19f8d0ff4ab7043f9cce93855, type: 2}
+      propertyPath: m_TagString
+      value: Cpu
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 50c2f6d19f8d0ff4ab7043f9cce93855, type: 2}
   m_IsPrefabParent: 0

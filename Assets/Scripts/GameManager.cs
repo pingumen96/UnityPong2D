@@ -7,6 +7,9 @@ public class GameManager : MonoBehaviour {
     private int cpuScore;
     private int playerScore;
 
+    public int CpuScore { get { return cpuScore; } set { this.cpuScore = value; } }
+    public int PlayerScore { get { return playerScore; } set { this.playerScore = value; } }
+
 
 
     private void Awake() {
