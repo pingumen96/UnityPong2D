@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         // fare metodo per log
+
         Debug.Log("Player score: " + playerScore.ToString());
         Debug.Log("CPU score: " + cpuScore.ToString());
 
